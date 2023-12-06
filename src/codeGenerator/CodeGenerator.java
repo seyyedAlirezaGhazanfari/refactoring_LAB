@@ -8,6 +8,7 @@ import semantic.symbol.SymbolTable;
 import semantic.symbol.SymbolType;
 
 import java.util.Stack;
+
 public class CodeGenerator {
     private Memory memory = new Memory();
     private Stack<Address> ss = new Stack<Address>();
@@ -142,6 +143,7 @@ public class CodeGenerator {
         symbolStack.push(className);
         symbolStack.push(methodName);
     }
+
     public void checkID() {
         symbolStack.pop();
         if (ss.peek().varType == varType.Non) {
@@ -154,7 +156,6 @@ public class CodeGenerator {
             String methodName = symbolStack.pop();
             String className = symbolStack.pop();
             try {
-
                 Symbol s = symbolTable.get(className, methodName, next.value);
                 varType t = varType.Int;
                 switch (s.type) {

@@ -1,9 +1,10 @@
 package codeGenerator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Memory {
-    private ArrayList<_3AddressCode> codeBlock;
+    private List<_3AddressCode> codeBlock;
     private int lastTempIndex;
     private int lastDataAddress;
     private final int stratTempMemoryAddress = 500;

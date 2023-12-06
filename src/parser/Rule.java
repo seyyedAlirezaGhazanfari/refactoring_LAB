@@ -3,6 +3,7 @@ package parser;
 import scanner.token.Token;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Rule {
     public Rule(String stringRule) {
@@ -33,7 +34,7 @@ public class Rule {
     }
 
     public NonTerminal LHS;
-    public ArrayList<GrammarSymbol> RHS;
+    public List<GrammarSymbol> RHS;
     public int semanticAction;
 }
 
