@@ -146,7 +146,8 @@ public class CodeGenerator {
 
     public void checkID() {
         symbolStack.pop();
-        if (ss.peek().varType == varType.Non) {
+        varType type = ss.peek().varType;
+        if (type == varType.Non) {
             //TODO : error
         }
     }
