@@ -183,8 +183,9 @@ public class CodeGenerator {
     public void fpid() {
         ss.pop();
         ss.pop();
-
-        Symbol s = symbolTable.get(symbolStack.pop(), symbolStack.pop());
+        String symbolStrRow = symbolStack.pop();
+        String symbolStrCol = symbolStack.pop();
+        Symbol s = symbolTable.get(symbolStrRow, symbolStrCol);
         varType t = varType.Int;
         switch (s.type) {
             case Bool:
