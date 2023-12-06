@@ -1,6 +1,6 @@
 package errorHandler;
 
-public class ErrorHandler {
+public abstract class ErrorHandler {
     public static boolean hasError = false;
 
     public static void printError(String msg) {
