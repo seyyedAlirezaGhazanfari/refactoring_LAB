@@ -2,6 +2,7 @@ package semantic.symbol;
 
 import codeGenerator.Address;
 import codeGenerator.Memory;
+import codeGenerator.typeAddress.Imidiate;
 import codeGenerator.varType;
 import errorHandler.ErrorHandler;
 
@@ -20,8 +21,8 @@ public class SymbolTable {
         mem = memory;
         klasses = new HashMap<>();
         keyWords = new HashMap<>();
-        keyWords.put("true", new Address(1, varType.Bool, TypeAddress.Imidiate));
-        keyWords.put("false", new Address(0, varType.Bool, TypeAddress.Imidiate));
+        keyWords.put("true", new Address(1, varType.Bool, Imidiate.getInstance()));
+        keyWords.put("false", new Address(0, varType.Bool, Imidiate.getInstance()));
     }
 
     public void setLastType(SymbolType type) {
@@ -51,10 +52,15 @@ public class SymbolTable {
     }
 
     public void addMethodLocalVariable(String className, String methodName, String localVariableName) {
-        if (klasses.get(className).Methodes.get(methodName).localVariable.containsKey(localVariableName)) {
+        Method method = getMethod(className, methodName);
+        if (method.localVariable.containsKey(localVariableName)) {
             ErrorHandler.printError("This variable already defined");
         }
-        klasses.get(className).Methodes.get(methodName).localVariable.put(localVariableName, new Symbol(lastType, mem.getDateAddress()));
+        method.localVariable.put(localVariableName, new Symbol(lastType, mem.getDateAddress()));
+    }
+
+    private Method getMethod(String className, String methodName) {
+        return klasses.get(className).Methodes.get(methodName);
     }
 
     public void setSuperClass(String superClass, String className) {
