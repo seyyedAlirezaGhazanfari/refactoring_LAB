@@ -141,9 +141,7 @@ public class CodeGenerator {
         String className = symbolStack.pop();
 
         symbolTable.addMethod(className, methodName, memory.getCurrentCodeBlockAddress());
-
-        symbolStack.push(className);
-        symbolStack.push(methodName);
+        updateStack(className, methodName);
     }
 
     public void checkID() {
@@ -174,8 +172,7 @@ public class CodeGenerator {
             } catch (Exception e) {
                 ss.push(new Address(0, varType.Non));
             }
-            symbolStack.push(className);
-            symbolStack.push(methodName);
+            updateStack(className, methodName);
         } else {
             ss.push(new Address(0, varType.Non));
         }
@@ -397,9 +394,7 @@ public class CodeGenerator {
         String className = symbolStack.pop();
 
         symbolTable.addMethod(className, methodName, memory.getCurrentCodeBlockAddress());
-
-        symbolStack.push(className);
-        symbolStack.push(methodName);
+        updateStack(className, methodName);
     }
 
     public void popClass() {
@@ -416,6 +411,10 @@ public class CodeGenerator {
         symbolTable.addField(symbolStack.pop(), symbolStack.peek());
     }
 
+    private void updateStack(String className, String methodName) {
+        symbolStack.push(className);
+        symbolStack.push(methodName);
+    }
     public void defVar() {
         ss.pop();
 
@@ -424,9 +423,7 @@ public class CodeGenerator {
         String className = symbolStack.pop();
 
         symbolTable.addMethodLocalVariable(className, methodName, var);
-
-        symbolStack.push(className);
-        symbolStack.push(methodName);
+        updateStack(className, methodName);
     }
 
     public void methodReturn() {
@@ -457,9 +454,7 @@ public class CodeGenerator {
         String className = symbolStack.pop();
 
         symbolTable.addMethodParameter(className, methodName, param);
-
-        symbolStack.push(className);
-        symbolStack.push(methodName);
+        updateStack(className, methodName);
     }
 
     public void lastTypeBool() {
