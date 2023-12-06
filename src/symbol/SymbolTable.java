@@ -2,7 +2,6 @@ package semantic.symbol;
 
 import codeGenerator.Address;
 import codeGenerator.Memory;
-import codeGenerator.TypeAddress;
 import codeGenerator.varType;
 import errorHandler.ErrorHandler;
 

@@ -1,4 +1,8 @@
 package codeGenerator;
+
+import codeGenerator.typeAddress.Direct;
+import codeGenerator.typeAddress.TypeAddress;
+
 public class Address {
     public int num;
     public TypeAddress Type;
@@ -12,19 +16,14 @@ public class Address {
 
     public Address(int num, varType varType) {
         this.num = num;
-        this.Type = TypeAddress.Direct;
+        this.Type = Direct.getInstance();
         this.varType = varType;
     }
 
     public String toString() {
-        switch (Type) {
-            case Direct:
-                return num + "";
-            case Indirect:
-                return "@" + num;
-            case Imidiate:
-                return "#" + num;
+        if (Type == null) {
+            return num + "";
         }
-        return num + "";
+        return Type.getString(num);
     }
 }
