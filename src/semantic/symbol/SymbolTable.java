@@ -2,12 +2,13 @@ package semantic.symbol;
 
 import codeGenerator.Address;
 import codeGenerator.Memory;
-import codeGenerator.TypeAddress;
+import codeGenerator.typeAddress.Imidiate;
 import codeGenerator.varType;
 import errorHandler.ErrorHandler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SymbolTable {
@@ -20,8 +21,8 @@ public class SymbolTable {
         mem = memory;
         klasses = new HashMap<>();
         keyWords = new HashMap<>();
-        keyWords.put("true", new Address(1, varType.Bool, TypeAddress.Imidiate));
-        keyWords.put("false", new Address(0, varType.Bool, TypeAddress.Imidiate));
+        keyWords.put("true", new Address(1, varType.Bool, Imidiate.getInstance()));
+        keyWords.put("false", new Address(0, varType.Bool, Imidiate.getInstance()));
     }
 
     public void setLastType(SymbolType type) {
@@ -51,14 +52,15 @@ public class SymbolTable {
     }
 
     public void addMethodLocalVariable(String className, String methodName, String localVariableName) {
-//        try {
-        if (klasses.get(className).Methodes.get(methodName).localVariable.containsKey(localVariableName)) {
+        Method method = getMethod(className, methodName);
+        if (method.localVariable.containsKey(localVariableName)) {
             ErrorHandler.printError("This variable already defined");
         }
-        klasses.get(className).Methodes.get(methodName).localVariable.put(localVariableName, new Symbol(lastType, mem.getDateAddress()));
-//        }catch (NullPointerException e){
-//            e.printStackTrace();
-//        }
+        method.localVariable.put(localVariableName, new Symbol(lastType, mem.getDateAddress()));
+    }
+
+    private Method getMethod(String className, String methodName) {
+        return klasses.get(className).Methodes.get(methodName);
     }
 
     public void setSuperClass(String superClass, String className) {
@@ -70,18 +72,14 @@ public class SymbolTable {
     }
 
     public Symbol get(String fieldName, String className) {
-//        try {
         return klasses.get(className).getField(fieldName);
-//        }catch (NullPointerException n)
-//        {
-//            n.printStackTrace();
-//            return null;
-//        }
     }
 
     public Symbol get(String className, String methodName, String variable) {
         Symbol res = klasses.get(className).Methodes.get(methodName).getVariable(variable);
-        if (res == null) res = get(variable, className);
+        if (res == null) {
+            res = get(variable, className);
+        }
         return res;
     }
 
@@ -90,12 +88,7 @@ public class SymbolTable {
     }
 
     public void startCall(String className, String methodName) {
-//        try {
         klasses.get(className).Methodes.get(methodName).reset();
-//        }catch (NullPointerException n)
-//        {
-//            n.printStackTrace();
-//        }
     }
 
     public int getMethodCallerAddress(String className, String methodName) {
@@ -107,13 +100,7 @@ public class SymbolTable {
     }
 
     public SymbolType getMethodReturnType(String className, String methodName) {
-//        try {
         return klasses.get(className).Methodes.get(methodName).returnType;
-//        }catch (NullPointerException ed){
-//            ed.printStackTrace();
-//            return null;
-//        }
-
     }
 
     public int getMethodAddress(String className, String methodName) {
@@ -145,7 +132,7 @@ public class SymbolTable {
         public int codeAddress;
         public Map<String, Symbol> parameters;
         public Map<String, Symbol> localVariable;
-        private ArrayList<String> orderdParameters;
+        private List<String> orderdParameters;
         public int callerAddress;
         public int returnAddress;
         public SymbolType returnType;
@@ -162,8 +149,12 @@ public class SymbolTable {
         }
 
         public Symbol getVariable(String variableName) {
-            if (parameters.containsKey(variableName)) return parameters.get(variableName);
-            if (localVariable.containsKey(variableName)) return localVariable.get(variableName);
+            if (parameters.containsKey(variableName)) {
+                return parameters.get(variableName);
+            }
+            if (localVariable.containsKey(variableName)) {
+                return localVariable.get(variableName);
+            }
             return null;
         }
 
@@ -182,17 +173,3 @@ public class SymbolTable {
     }
 
 }
-
-//class Symbol{
-//    public SymbolType type;
-//    public int address;
-//    public Symbol(SymbolType type , int address)
-//    {
-//        this.type = type;
-//        this.address = address;
-//    }
-//}
-//enum SymbolType{
-//    Int,
-//    Bool
-//}
