@@ -33,7 +33,7 @@ public class CodeGenerator {
             case 0:
                 return;
             case 1:
-                checkID();
+                symbolStack.pop();
                 break;
             case 2:
                 pid(next);
@@ -142,11 +142,6 @@ public class CodeGenerator {
 
         symbolTable.addMethod(className, methodName, memory.getCurrentCodeBlockAddress());
         updateStack(className, methodName);
-    }
-
-    public void checkID() {
-        symbolStack.pop();
-        //TODO : add error case on ss.peek().varType == varType.None
     }
 
     public void pid(Token next) {
