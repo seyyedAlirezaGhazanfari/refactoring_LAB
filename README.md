@@ -1,3 +1,4 @@
+# گزارش بازآرایی‌ها
 در ابتدا باید متذکر بشوم که از انجایی که در تمامی پروژه های قبلی در فایل README گزارش را نوشته بودیم پس تصمیم گرفتیم که ریپوهای خود را یکدست نگهداریم بدین ترتیب در این پروژه هم در فایلی با همین نام گزارش و پاسخ به سوالات را نوشتیم و دیگر فایلی با اسم report نساختیم.
 
 در گام اول انجام این پروژه ایتدا مطابق با آزمایش های قبلی یک ریپو ساختیم و شرایط و محدودیت های لازم را به آن اضافه کردیم سپس به سراغ وارد کردن کد پروژه اماده MINIJAVA در پروژه خود رفتیم و کدهای آن را دانلود و به پروژه خود منتقل کردیم. در این مسیر به مشکلاتی اعم از انتخاب درست root project خوردیم که باعث شد تمامی packagin های فایل های این پروژه را خطا بگیرد. خلاصه رسیدیم به گام اول ریفکتورینگ یعنی استفاده از ابزارهایی که در فیلم آموزشی هم به انها اشاره شده بود. در این آزمایش ما از https://getcodeflow.com/ استفاده کردیم.
@@ -21,7 +22,6 @@
 
 [inline method-1](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/cf7d96d845f394576250ea05709e66293fd2189b)
 
-
 [inline method-2](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/35ac88db5257b0d601eabffa761a074a2932d4cd)
 
 [extract variable-1](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/3cb2ba59406828edd280c99e0db5d4d498786dfe)
@@ -34,6 +34,9 @@
 
 [seperate query from modifier](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/9c219c278a95c2d18a2b1943058410069925b315)
 
+بازآرایی Facade: به جای استفاده مستقیم از چند کلاس یک فریمورک یا سیستم یا پکیج دیگر، یک کلاس ایجاد کرده که آن عملکرد را encapsulate می‌کند و بقیه کدها را پنهان می‌کند.
+  - اولین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/8693f2c81d305b8c9e37c7c622bc00dd3dc4a4bc) انجام شده است. اینجا به جای استفاده از Address و TypeAddress و varType که از package دیگیری هستند از یک کلاس Facade استفاده شده است.
+  - دومین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/39d1a4d897092d9a5891d86081f54c1cf60462cb) انجام شده است. اینجا به جای استفاده از Token و تابع getTyepFormString که از package دیگری هستند از یک کلاس Facade با ساختار ساده تر استفاده شده است.
 
 # سوال اول
 ## کد تمیز (clean code)
