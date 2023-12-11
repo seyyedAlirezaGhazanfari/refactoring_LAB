@@ -33,7 +33,7 @@ public class CodeGenerator {
             case 0:
                 return;
             case 1:
-                checkID();
+                symbolStack.pop();
                 break;
             case 2:
                 pid(next);
@@ -42,7 +42,7 @@ public class CodeGenerator {
                 fpid();
                 break;
             case 4:
-                kpid(next);
+                ss.push(symbolTable.get(next.value));
                 break;
             case 5:
                 intpid(next);
@@ -144,11 +144,6 @@ public class CodeGenerator {
         updateStack(className, methodName);
     }
 
-    public void checkID() {
-        symbolStack.pop();
-        //TODO : add error case on ss.peek().varType == varType.None
-    }
-
     public void pid(Token next) {
         if (symbolStack.size() > 1) {
             String methodName = symbolStack.pop();
@@ -186,9 +181,6 @@ public class CodeGenerator {
 
     }
 
-    public void kpid(Token next) {
-        ss.push(symbolTable.get(next.value));
-    }
 
     public void intpid(Token next) {
         ss.push(new Address(Integer.parseInt(next.value), varType.Int, Imidiate.getInstance()));
