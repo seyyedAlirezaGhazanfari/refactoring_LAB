@@ -42,7 +42,7 @@ public class CodeGenerator {
                 fpid();
                 break;
             case 4:
-                kpid(next);
+                ss.push(symbolTable.get(next.value));
                 break;
             case 5:
                 intpid(next);
@@ -181,9 +181,6 @@ public class CodeGenerator {
 
     }
 
-    public void kpid(Token next) {
-        ss.push(symbolTable.get(next.value));
-    }
 
     public void intpid(Token next) {
         ss.push(new Address(Integer.parseInt(next.value), varType.Int, Imidiate.getInstance()));
