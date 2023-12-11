@@ -1,14 +1,4 @@
 # گزارش بازآرایی‌ها
-- بازآرایی Facade: به جای استفاده مستقیم از چند کلاس یک فریمورک یا سیستم یا پکیج دیگر، یک کلاس ایجاد کرده که آن عملکرد را encapsulate می‌کند و بقیه کدها را پنهان می‌کند.
-  - اولین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/8693f2c81d305b8c9e37c7c622bc00dd3dc4a4bc) انجام شده است. اینجا به جای استفاده از Address و TypeAddress و varType که از package دیگیری هستند از یک کلاس Facade استفاده شده است.
-  - دومین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/39d1a4d897092d9a5891d86081f54c1cf60462cb) انجام شده است. اینجا به جای استفاده از Token و تابع getTyepFormString که از package دیگری هستند از یک کلاس Facade با ساختار ساده تر استفاده شده است.
-- تبدیل Switch Statement به Polymorphism
-  - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/310c47b7ffa9c8e71b37ce70330d7d81904680cc) انجام شده است. اینجا به جای استفاده از switch از کلاس‌هایی که رابط TypeAddress را پیاده سازی می‌کنند استفاده شده و به جای enum از این کلاس‌ها به صورت Singleton استفاده شده است.
-- بازآرایی Separate Query From Modifie
-  - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/9c219c278a95c2d18a2b1943058410069925b315) انجام شده است.
-- بازآرایی Loose Coupling
-  - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/bb57419c6a231726069f2ecce47e5ac77cac7c67) انجام شده است. در اینجا به جای استفاده از ArrayList از List استفاده شده که سطح بالاتری از ArrayList دارد و چون به توابع کلاس ArrayList که در List نیستند نیازی نداریم باعث کاهش coupling می‌شود. در این حالت تغییرات احتمالی در ArrayList مشکلی در کار ما ایجاد نمی‌کند چون کاری که داریم در سطح List قابل انجام است.
-
 در ابتدا باید متذکر بشوم که از انجایی که در تمامی پروژه های قبلی در فایل README گزارش را نوشته بودیم پس تصمیم گرفتیم که ریپوهای خود را یکدست نگهداریم بدین ترتیب در این پروژه هم در فایلی با همین نام گزارش و پاسخ به سوالات را نوشتیم و دیگر فایلی با اسم report نساختیم.
 
 در گام اول انجام این پروژه ایتدا مطابق با آزمایش های قبلی یک ریپو ساختیم و شرایط و محدودیت های لازم را به آن اضافه کردیم سپس به سراغ وارد کردن کد پروژه اماده MINIJAVA در پروژه خود رفتیم و کدهای آن را دانلود و به پروژه خود منتقل کردیم. در این مسیر به مشکلاتی اعم از انتخاب درست root project خوردیم که باعث شد تمامی packagin های فایل های این پروژه را خطا بگیرد. خلاصه رسیدیم به گام اول ریفکتورینگ یعنی استفاده از ابزارهایی که در فیلم آموزشی هم به انها اشاره شده بود. در این آزمایش ما از https://getcodeflow.com/ استفاده کردیم.
@@ -44,6 +34,9 @@
 
 [seperate query from modifier](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/9c219c278a95c2d18a2b1943058410069925b315)
 
+بازآرایی Facade: به جای استفاده مستقیم از چند کلاس یک فریمورک یا سیستم یا پکیج دیگر، یک کلاس ایجاد کرده که آن عملکرد را encapsulate می‌کند و بقیه کدها را پنهان می‌کند.
+  - اولین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/8693f2c81d305b8c9e37c7c622bc00dd3dc4a4bc) انجام شده است. اینجا به جای استفاده از Address و TypeAddress و varType که از package دیگیری هستند از یک کلاس Facade استفاده شده است.
+  - دومین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/39d1a4d897092d9a5891d86081f54c1cf60462cb) انجام شده است. اینجا به جای استفاده از Token و تابع getTyepFormString که از package دیگری هستند از یک کلاس Facade با ساختار ساده تر استفاده شده است.
 
 # سوال اول
 ## کد تمیز (clean code)
