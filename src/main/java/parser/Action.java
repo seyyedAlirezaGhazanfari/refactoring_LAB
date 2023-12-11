@@ -10,15 +10,11 @@ public class Action {
     }
 
     public String toString() {
-        switch (action) {
-            case accept:
-                return "acc";
-            case shift:
-                return "s" + number;
-            case reduce:
-                return "r" + number;
-        }
-        return action.toString() + number;
+        return switch (action) {
+            case accept -> "acc";
+            case shift -> "s" + number;
+            case reduce -> "r" + number;
+        };
     }
 }
 
