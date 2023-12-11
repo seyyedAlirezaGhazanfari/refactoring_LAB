@@ -30,7 +30,7 @@ public enum Type {
         this.pattern = pattern;
     }
 
-    public Type getTyepFormString(String s) {
+    public Type getTypeFormString(String s) {
         Pattern pattern;
         Matcher matcher;
         for (Type t : values()) {

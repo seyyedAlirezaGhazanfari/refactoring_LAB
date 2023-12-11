@@ -21,8 +21,7 @@ public class Token {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof Token) {
-            Token temp = (Token) o;
+        if (o instanceof Token temp) {
             if (temp.type == this.type) {
                 return this.type != Type.KEYWORDS || this.value.equals(temp.value);
             }
