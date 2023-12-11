@@ -38,7 +38,7 @@ public class ParseTable {
             actionTable.add(new HashMap<>());
             gotoTable.add(new HashMap<>());
             for (int j = 1; j < cols.length; j++) {
-                if (!cols[j].equals("")) {
+                if (!cols[j].isEmpty()) {
                     if (cols[j].equals("acc")) {
                         actionTable.get(actionTable.size() - 1).put(terminals.get(j), new Action(act.accept, 0));
                     } else if (terminals.containsKey(j)) {
