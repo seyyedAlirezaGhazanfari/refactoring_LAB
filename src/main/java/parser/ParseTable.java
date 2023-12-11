@@ -5,15 +5,12 @@ import scanner.token.TokenFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-/**
- * Created by mohammad hosein on 6/25/2015.
- */
-
 public class ParseTable {
-    private ArrayList<Map<Token, Action>> actionTable;
-    private ArrayList<Map<NonTerminal, Integer>> gotoTable;
+    private List<Map<Token, Action>> actionTable;
+    private List<Map<NonTerminal, Integer>> gotoTable;
 
     public ParseTable(String jsonTable) throws Exception {
         jsonTable = jsonTable.substring(2, jsonTable.length() - 2);
@@ -50,13 +47,9 @@ public class ParseTable {
                     if (cols[j].equals("acc")) {
                         actionTable.get(actionTable.size() - 1).put(terminals.get(j), new Action(act.accept, 0));
                     } else if (terminals.containsKey(j)) {
-//                        try {
                         Token t = terminals.get(j);
                         Action a = new Action(cols[j].charAt(0) == 'r' ? act.reduce : act.shift, Integer.parseInt(cols[j].substring(1)));
                         actionTable.get(actionTable.size() - 1).put(t, a);
-//                        }catch (StringIndexOutOfBoundsException e){
-//                            e.printStackTrace();
-//                        }
                     } else if (nonTerminals.containsKey(j)) {
                         gotoTable.get(gotoTable.size() - 1).put(nonTerminals.get(j), Integer.parseInt(cols[j]));
                     } else {
@@ -68,13 +61,7 @@ public class ParseTable {
     }
 
     public int getGotoTable(int currentState, NonTerminal variable) {
-//        try {
         return gotoTable.get(currentState).get(variable);
-//        }catch (NullPointerException dd)
-//        {
-//            dd.printStackTrace();
-//        }
-//        return 0;
     }
 
     public Action getActionTable(int currentState, Token terminal) {
