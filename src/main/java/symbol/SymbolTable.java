@@ -20,8 +20,8 @@ public class SymbolTable {
         mem = memory;
         klasses = new HashMap<>();
         keyWords = new HashMap<>();
-        keyWords.put("true", CodeGeneratorFacade.createAddress(1, "Bool", "Imidiate"));
-        keyWords.put("false",CodeGeneratorFacade.createAddress(0, "Bool", "Imidiate"));
+        keyWords.put("true", CodeGeneratorFacade.createImmidiateAddress(1, "Bool"));
+        keyWords.put("false",CodeGeneratorFacade.createImmidiateAddress(0, "Bool"));
     }
 
     public void setLastType(SymbolType type) {
