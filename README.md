@@ -4,6 +4,10 @@
   - دومین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/39d1a4d897092d9a5891d86081f54c1cf60462cb) انجام شده است. اینجا به جای استفاده از Token و تابع getTyepFormString که از package دیگری هستند از یک کلاس Facade با ساختار ساده تر استفاده شده است.
 - تبدیل Switch Statement به Polymorphism
   - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/310c47b7ffa9c8e71b37ce70330d7d81904680cc) انجام شده است. اینجا به جای استفاده از switch از کلاس‌هایی که رابط TypeAddress را پیاده سازی می‌کنند استفاده شده و به جای enum از این کلاس‌ها به صورت Singleton استفاده شده است.
+- بازآرایی Separate Query From Modifie
+  - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/9c219c278a95c2d18a2b1943058410069925b315) انجام شده است.
+- بازآرایی Loose Coupling
+  - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/bb57419c6a231726069f2ecce47e5ac77cac7c67) انجام شده است. در اینجا به جای استفاده از ArrayList از List استفاده شده که سطح بالاتری از ArrayList دارد و چون به توابع کلاس ArrayList که در List نیستند نیازی نداریم باعث کاهش coupling می‌شود. در این حالت تغییرات احتمالی در ArrayList مشکلی در کار ما ایجاد نمی‌کند چون کاری که داریم در سطح List قابل انجام است.
 
 # سوال اول
 ## کد تمیز (clean code)
