@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class lexicalAnalyzer {
-    private Matcher matcher;
+    private final Matcher matcher;
 
     public lexicalAnalyzer(java.util.Scanner sc) {
         StringBuilder input = new StringBuilder();
@@ -16,8 +16,9 @@ public class lexicalAnalyzer {
             input.append(sc.nextLine());
         }
         StringBuilder tokenPattern = new StringBuilder();
-        for (Type tokenType : Type.values())
+        for (Type tokenType : Type.values()) {
             tokenPattern.append(String.format("|(?<%s>%s)", tokenType.name(), tokenType.pattern));
+        }
         Pattern expression = Pattern.compile(tokenPattern.substring(1));
         matcher = expression.matcher(input.toString());
     }
