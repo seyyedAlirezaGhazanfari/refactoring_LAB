@@ -75,7 +75,7 @@ class _3AddressCode {
         if (operation == null) {
             return "";
         }
-        StringBuffer res = new StringBuffer("(");
+        StringBuilder res = new StringBuilder("(");
         res.append(operation.toString()).append(",");
         if (Operand1 != null) {
             res.append(Operand1);
