@@ -1,6 +1,7 @@
 package parser;
 
 import scanner.token.Token;
+import scanner.token.TokenFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Rule {
                 try {
                     RHS.add(new GrammarSymbol(NonTerminal.valueOf(s)));
                 } catch (Exception e) {
-                    RHS.add(new GrammarSymbol(new Token(Token.getTyepFormString(s), s)));
+                    RHS.add(new GrammarSymbol(TokenFacade.createToken(s)));
                 }
             }
         }

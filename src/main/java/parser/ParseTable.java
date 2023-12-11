@@ -1,6 +1,7 @@
 package parser;
 
 import scanner.token.Token;
+import scanner.token.TokenFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class ParseTable {
                     temp = temp;
                 }
             } else {
-                terminals.put(i, new Token(Token.getTyepFormString(cols[i]), cols[i]));
+                terminals.put(i, TokenFacade.createToken(cols[i]));
             }
         }
         actionTable = new ArrayList<Map<Token, Action>>();
