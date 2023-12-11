@@ -2,6 +2,8 @@
 - بازآرایی Facade: به جای استفاده مستقیم از چند کلاس یک فریمورک یا سیستم یا پکیج دیگر، یک کلاس ایجاد کرده که آن عملکرد را encapsulate می‌کند و بقیه کدها را پنهان می‌کند.
   - اولین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/8693f2c81d305b8c9e37c7c622bc00dd3dc4a4bc) انجام شده است. اینجا به جای استفاده از Address و TypeAddress و varType که از package دیگیری هستند از یک کلاس Facade استفاده شده است.
   - دومین مورد Facade در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/39d1a4d897092d9a5891d86081f54c1cf60462cb) انجام شده است. اینجا به جای استفاده از Token و تابع getTyepFormString که از package دیگری هستند از یک کلاس Facade با ساختار ساده تر استفاده شده است.
+- تبدیل Switch Statement به Polymorphism
+  - این بازآرایی در [این کامیت](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/310c47b7ffa9c8e71b37ce70330d7d81904680cc) انجام شده است. اینجا به جای استفاده از switch از کلاس‌هایی که رابط TypeAddress را پیاده سازی می‌کنند استفاده شده و به جای enum از این کلاس‌ها به صورت Singleton استفاده شده است.
 
 # سوال اول
 ## کد تمیز (clean code)
