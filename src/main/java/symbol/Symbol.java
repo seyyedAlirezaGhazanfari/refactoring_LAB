@@ -1,4 +1,4 @@
-package semantic.symbol;
+package symbol;
 
 public class Symbol {
     public SymbolType type;

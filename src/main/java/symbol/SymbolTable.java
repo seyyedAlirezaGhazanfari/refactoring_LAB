@@ -1,4 +1,4 @@
-package semantic.symbol;
+package symbol;
 
 import codeGenerator.Address;
 import codeGenerator.Memory;

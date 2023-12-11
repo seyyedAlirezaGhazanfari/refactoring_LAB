@@ -5,9 +5,9 @@ import codeGenerator.typeAddress.Imidiate;
 import codeGenerator.typeAddress.Indirect;
 import errorHandler.ErrorHandler;
 import scanner.token.Token;
-import semantic.symbol.Symbol;
-import semantic.symbol.SymbolTable;
-import semantic.symbol.SymbolType;
+import symbol.Symbol;
+import symbol.SymbolTable;
+import symbol.SymbolType;
 
 import java.util.Stack;
 
