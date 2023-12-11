@@ -24,8 +24,7 @@ public class ParseTable {
                 String temp = cols[i].substring(5);
                 try {
                     nonTerminals.put(i, NonTerminal.valueOf(temp));
-                } catch (Exception e) {
-                    temp = temp;
+                } catch (Exception ignored) {
                 }
             } else {
                 terminals.put(i, TokenFacade.createToken(cols[i]));
@@ -34,10 +33,6 @@ public class ParseTable {
         actionTable = new ArrayList<>();
         gotoTable = new ArrayList<>();
         for (int i = 1; i < Rows.length; i++) {
-            if (i == 100) {
-                int a = 1;
-                a++;
-            }
             Rows[i] = Rows[i].substring(1, Rows[i].length() - 1);
             cols = Rows[i].split("\",\"");
             actionTable.add(new HashMap<>());

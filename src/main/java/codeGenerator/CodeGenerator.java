@@ -146,10 +146,7 @@ public class CodeGenerator {
 
     public void checkID() {
         symbolStack.pop();
-        varType type = ss.peek().varType;
-        if (type == varType.Non) {
-            //TODO : error
-        }
+        //TODO : add error case on ss.peek().varType == varType.None
     }
 
     public void pid(Token next) {
@@ -445,9 +442,5 @@ public class CodeGenerator {
 
     public void lastTypeInt() {
         symbolTable.setLastType(SymbolType.Int);
-    }
-
-    public void main() {
-
     }
 }
