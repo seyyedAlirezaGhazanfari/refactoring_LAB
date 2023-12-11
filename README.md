@@ -19,7 +19,20 @@
 
 لینک کامیت های مربوط به هر یک از ریفکتورینگ ها:
 
+[inline method-1](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/cf7d96d845f394576250ea05709e66293fd2189b)
 
+
+[inline method-2](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/35ac88db5257b0d601eabffa761a074a2932d4cd)
+
+[extract variable-1](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/3cb2ba59406828edd280c99e0db5d4d498786dfe)
+
+[extract variable-2](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/f2cc28dda9d704f0ada28ed253c49416ae34b75e)
+
+[extract method 1](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/af527d62876e978fe22f8841521053301d1df96e)
+
+[polymorphism](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/310c47b7ffa9c8e71b37ce70330d7d81904680cc)
+
+[seperate query from modifier](https://github.com/seyyedAlirezaGhazanfari/refactoring_LAB/commit/9c219c278a95c2d18a2b1943058410069925b315)
 
 
 # سوال اول
